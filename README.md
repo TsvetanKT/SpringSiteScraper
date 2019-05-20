@@ -19,4 +19,4 @@ Spring Boot MVC project for site scraping
 *	[SiteScraperCore](https://github.com/TsvetanKT/SiteScraperCore) library
 
 ### Screenshot:
-![Home view](https://raw.githubusercontent.com/TsvetanKT/SiteScraper/master/SiteScraperScreenshot.png "Home view")
+![Home view](https://raw.githubusercontent.com/TsvetanKT/SpringSiteScraper/master/SpringSiteScraperScreenshot.png "Home view")
