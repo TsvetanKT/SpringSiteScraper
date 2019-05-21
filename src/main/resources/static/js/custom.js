@@ -22,3 +22,8 @@ function getIteration() {
     getIteration.counter++;
     return getIteration.counter;
 }
+
+function getSelectedStrategy() {
+	
+	return $('#strategy option:selected').text().trim();
+}

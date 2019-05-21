@@ -1,5 +1,6 @@
-<%@page language="java" contentType="text/html" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>  
 
 <!DOCTYPE html>
 
@@ -38,7 +39,7 @@
 	            {
 	            		query:$('#search').val(), 
 	            		/* strategy:$('#strategy option:selected').text().trim(), */ 
-	            		strategy:"${selectedStrategy}", 
+	            		strategy: getSelectedStrategy(), 
 	            		iteration: getIteration()
 	        	};
 	            $.get("/api/getImagesData", requestParams, function(data){
@@ -63,18 +64,34 @@
     <body>
 	
 	<div class="navbar text-center">
-		<form:form  modelAttribute="QueryObject" class="form-inline" method="POST" action="/">
+
+		<form class="form-inline" method="GET" action="/2">
+			<input type="hidden" name="iteration" value="1" />
 			<div class="form-group">
-		      <form:input type="text" id="search" class="form-control" path="searchText" autocomplete="off" value="${searchText}" style="width:600px;" />
-		    </div>
+				<input type="text" id="search" class="form-control"
+					name="searchText" autocomplete="off" value="${searchText}"
+					style="width: 600px;" />
+			</div>
 			<div class="form-group">
-		      <form:select class="form-control" id="strategy" path="strategy"  style="width:auto;">
-	      			 <form:option value="${selectedStrategy}" />
-                     <form:options items="${listOfStrategies}"></form:options>
-				</form:select>
-		    </div>
+				<select class="form-control" id="strategy" name="strategy"
+					style="width: auto;">
+					<c:forEach items="${listOfStrategies}" var="strategyItem">
+						<c:choose>
+							<c:when test="${strategyItem != selectedStrategy}">
+								<option value="${strategyItem}">${strategyItem}</option>
+							</c:when>
+							<c:otherwise>
+								<option selected value="${strategyItem}">${strategyItem}</option>
+							</c:otherwise>
+						
+						</c:choose>
+					</c:forEach>
+
+				</select>
+			</div>
 			<input type="submit" class="btn btn-default" value="Submit">
-		</form:form>
+		</form>
+
 	</div>
 	
 	<div class="container gallery-container">
