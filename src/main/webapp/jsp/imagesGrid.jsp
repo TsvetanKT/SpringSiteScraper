@@ -65,7 +65,7 @@
 	
 	<div class="navbar text-center">
 
-		<form class="form-inline" method="GET" action="/2">
+		<form class="form-inline" method="GET" action="/">
 			<input type="hidden" name="iteration" value="1" />
 			<div class="form-group">
 				<input type="text" id="search" class="form-control"

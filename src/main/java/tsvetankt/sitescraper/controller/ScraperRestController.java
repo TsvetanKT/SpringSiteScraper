@@ -32,7 +32,7 @@ public class ScraperRestController {
             produces = "application/json")
     public ResponseEntity<?> getImagesData(@RequestParam String query,
             @RequestParam String strategy, @RequestParam int iteration) {
-        return ResponseEntity.ok(scraperService.getIteration(query, strategy, iteration));
+        return ResponseEntity.ok(scraperService.getIteration(query.trim(), strategy, iteration));
     }
 
     @ApiOperation(value = "Get active scraping strategies", response = Iterable.class)
