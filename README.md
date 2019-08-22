@@ -18,5 +18,13 @@ Spring Boot MVC project for site scraping
 *	[baguetteBox.js](https://feimosi.github.io/baguetteBox.js) lightbox gallery
 *	[SiteScraperCore](https://github.com/TsvetanKT/SiteScraperCore) library
 
+### Swagger endpoints
+*	UI *http://localhost:8080/swagger-ui.html*
+*	API *http://localhost:8080/v2/api-docs*
+
+### Example functionality
+*	Search query "*cute kittens*" and strategy selected "*Google Images*" will show the found images in the custom UI
+*	Search query "*https://cutest-cats.tumblr.com*" and strategy selected "*Tumblr Blog*" will show the images found in that tumblr blog in the custom UI
+
 ### Screenshot:
 ![Home view](https://raw.githubusercontent.com/TsvetanKT/SpringSiteScraper/master/SpringSiteScraperScreenshot.png "Home view")
